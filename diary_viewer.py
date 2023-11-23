@@ -38,7 +38,7 @@ df_list = df.values.tolist()
 column_one = df.iloc[:, 0]
 
 # 重複を除去して新しいデータフレームを作成
-new_df = pd.DataFrame({df.columns[0]: column_one.unique()})
+new_df = pd.DataFrame({df.columns[0]: column_one.unique()},index=False)
 
 # DataFrameをリストに変換
 new_df_list = new_df.values.tolist()
@@ -89,5 +89,5 @@ viewer_df = pd.DataFrame(view_df_list,columns=["date","自己肯定感or効力�
 
 # # Streamlitで表示
 st.title('褒める日誌！')
-st.markdown(viewer_df)
+st.dataframe(viewer_df)
 # print(new_df_list)
