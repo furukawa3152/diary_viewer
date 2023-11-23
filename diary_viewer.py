@@ -30,64 +30,71 @@ df = pd.DataFrame(data)
 df.columns = df.iloc[0]
 # 一行目を削除する
 df = df[1:]
-df_list = df.values.tolist()
-# Streamlitで表示
-# st.title('Spreadsheet Data')
-# st.write(df)
-# 一列目を取得
-column_one = df.iloc[:, 0]
 
-# 重複を除去して新しいデータフレームを作成
-new_df = pd.DataFrame({df.columns[0]: column_one.unique()})
+with st.form("my_form", clear_on_submit=False):
+    line_id = st.text_input('line_idを入力して下さい。')
+    submitted = st.form_submit_button("日記を出力")
 
-# DataFrameをリストに変換
-new_df_list = new_df.values.tolist()
-#最後にどうでもいいやつを足してやる
+if submitted:
+    df = df[df.iloc[:, 6] == line_id ]
+    df_list = df.values.tolist()
+    # Streamlitで表示
+    # st.title('Spreadsheet Data')
+    # st.write(df)
+    # 一列目を取得
+    column_one = df.iloc[:, 0]
 
-# new_df_list.append(["hoge"])
-view_df_list = []
-hoge1, hoge2, hoge3, hoge4 = ("", "", "", "")
-num = 0
+    # 重複を除去して新しいデータフレームを作成
+    new_df = pd.DataFrame({df.columns[0]: column_one.unique()})
 
-for j in df_list:
-    ymd = new_df_list[num][0]
-    if j[0] == ymd:
-        if j[1] != "":
-            hoge1 += j[1] +"  \n"
-        if j[2] != "":
-            hoge2 += j[2] +"  \n"
-        if j[3] != "":
-            hoge3 += j[3] +"  \n"
-        if j[4] != "":
-            hoge4 += j[4] +"  \n"
-    else:
-        view_df_list.append([ymd, hoge1, hoge2, hoge3, hoge4])
-        hoge1, hoge2, hoge3, hoge4 = ("", "", "", "")
-        num += 1
+    # DataFrameをリストに変換
+    new_df_list = new_df.values.tolist()
+    #最後にどうでもいいやつを足してやる
+
+    # new_df_list.append(["hoge"])
+    view_df_list = []
+    hoge1, hoge2, hoge3, hoge4 = ("", "", "", "")
+    num = 0
+
+    for j in df_list:
         ymd = new_df_list[num][0]
         if j[0] == ymd:
             if j[1] != "":
-                hoge1 += j[1] + "  \n"
+                hoge1 += j[1] +"  \n"
             if j[2] != "":
-                hoge2 += j[2] + "  \n"
+                hoge2 += j[2] +"  \n"
             if j[3] != "":
-                hoge3 += j[3] + "  \n"
+                hoge3 += j[3] +"  \n"
             if j[4] != "":
-                hoge4 += j[4] + "  \n"
+                hoge4 += j[4] +"  \n"
+        else:
+            view_df_list.append([ymd, hoge1, hoge2, hoge3, hoge4])
+            hoge1, hoge2, hoge3, hoge4 = ("", "", "", "")
+            num += 1
+            ymd = new_df_list[num][0]
+            if j[0] == ymd:
+                if j[1] != "":
+                    hoge1 += j[1] + "  \n"
+                if j[2] != "":
+                    hoge2 += j[2] + "  \n"
+                if j[3] != "":
+                    hoge3 += j[3] + "  \n"
+                if j[4] != "":
+                    hoge4 += j[4] + "  \n"
 
-# for view in view_df_list:
-#     print(view)
-viewer_df = pd.DataFrame(view_df_list,columns=["date","自己肯定感or効力感","明日必ずやる","今日の振り返り","今日の一言"])
-# print(viewer_df)
+    # for view in view_df_list:
+    #     print(view)
+    viewer_df = pd.DataFrame(view_df_list,columns=["date","自己肯定感or効力感","明日必ずやる","今日の振り返り","今日の一言"])
+    # print(viewer_df)
 
 
 
 
-# print(df_list)
+    # print(df_list)
 
 
 
-# # Streamlitで表示
-st.title('褒める日誌！')
-st.write(viewer_df)
-# print(new_df_list)
+    # # Streamlitで表示
+    st.title('褒める日誌！')
+    st.write(viewer_df)
+    # print(new_df_list)
