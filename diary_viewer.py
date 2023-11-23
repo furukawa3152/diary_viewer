@@ -43,7 +43,7 @@ new_df = pd.DataFrame({df.columns[0]: column_one.unique()})
 # DataFrameをリストに変換
 new_df_list = new_df.values.tolist()
 #最後にどうでもいいやつを足してやる
-# new_df_list.append(["hoge"])
+new_df_list.append(["hoge"])
 view_df_list = []
 hoge1, hoge2, hoge3, hoge4 = ("", "", "", "")
 num = 0
@@ -88,5 +88,5 @@ viewer_df = pd.DataFrame(view_df_list,columns=["date","a","b","c","d"])
 
 # # Streamlitで表示
 st.title('Spreadsheet Data')
-st.write(viewer_df)
+st.table(viewer_df)
 # print(new_df_list)
