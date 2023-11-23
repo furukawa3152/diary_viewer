@@ -41,7 +41,7 @@ column_one = df.iloc[:, 0]
 new_df = pd.DataFrame({df.columns[0]: column_one.unique()})
 
 # DataFrameをリストに変換
-new_df_list = new_df.values.tolist()
+new_df_list = new_df.values.tolist().append("hoge")
 view_df_list = []
 hoge1, hoge2, hoge3, hoge4 = ("", "", "", "")
 num = 0
@@ -50,13 +50,13 @@ for j in df_list:
     ymd = new_df_list[num][0]
     if j[0] == ymd:
         if j[1] != "":
-            hoge1 += j[1] +"\  n"
+            hoge1 += j[1] +"  \n"
         if j[2] != "":
-            hoge2 += j[2] +"\  n"
+            hoge2 += j[2] +"  \n"
         if j[3] != "":
-            hoge3 += j[3] +"\  n"
+            hoge3 += j[3] +"  \n"
         if j[4] != "":
-            hoge4 += j[4] +"\  n"
+            hoge4 += j[4] +"  \n"
     else:
         view_df_list.append([ymd, hoge1, hoge2, hoge3, hoge4])
         hoge1, hoge2, hoge3, hoge4 = ("", "", "", "")
@@ -64,13 +64,13 @@ for j in df_list:
         ymd = new_df_list[num][0]
         if j[0] == ymd:
             if j[1] != "":
-                hoge1 += j[1] + "\  n"
+                hoge1 += j[1] + "  \n"
             if j[2] != "":
-                hoge2 += j[2] + "\  n"
+                hoge2 += j[2] + "  \n"
             if j[3] != "":
-                hoge3 += j[3] + "\  n"
+                hoge3 += j[3] + "  \n"
             if j[4] != "":
-                hoge4 += j[4] + "\  n"
+                hoge4 += j[4] + "  \n"
 
 # for view in view_df_list:
 #     print(view)
