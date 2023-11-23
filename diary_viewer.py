@@ -89,5 +89,5 @@ viewer_df = pd.DataFrame(view_df_list,columns=["date","自己肯定感or効力�
 
 # # Streamlitで表示
 st.title('褒める日誌！')
-st.dataframe(viewer_df)
+st.markdown(viewer_df)
 # print(new_df_list)
