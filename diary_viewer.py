@@ -30,7 +30,7 @@ df = pd.DataFrame(data)
 df.columns = df.iloc[0]
 # 一行目を削除する
 df = df[1:]
-
+st.title('褒める日誌！')
 with st.form("my_form", clear_on_submit=False):
     line_id = st.text_input('line_idを入力して下さい。')
     submitted = st.form_submit_button("日記を出力")
@@ -95,6 +95,5 @@ if submitted:
 
 
     # # Streamlitで表示
-    st.title('褒める日誌！')
     st.write(viewer_df)
     # print(new_df_list)
