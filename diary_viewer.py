@@ -25,7 +25,7 @@ worksheets = workbook.worksheets()
 sheet = workbook.worksheet('シート1')
 data = sheet.get_all_values()
 # Pandas DataFrameに変換
-df = pd.DataFrame(data,index=False)
+df = pd.DataFrame(data)
 # 一行目をカラム名にする
 df.columns = df.iloc[0]
 # 一行目を削除する
