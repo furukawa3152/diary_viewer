@@ -38,7 +38,7 @@ df_list = df.values.tolist()
 column_one = df.iloc[:, 0]
 
 # 重複を除去して新しいデータフレームを作成
-new_df = pd.DataFrame({df.columns[0]: column_one.unique()},index=False)
+new_df = pd.DataFrame({df.columns[0]: column_one.unique()})
 
 # DataFrameをリストに変換
 new_df_list = new_df.values.tolist()
