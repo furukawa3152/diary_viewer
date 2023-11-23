@@ -61,9 +61,22 @@ for j in df_list:
         view_df_list.append([ymd, hoge1, hoge2, hoge3, hoge4])
         hoge1, hoge2, hoge3, hoge4 = ("", "", "", "")
         num += 1
+        ymd = new_df_list[num][0]
+        if j[0] == ymd:
+            if j[1] != "":
+                hoge1 += j[1] + "\n"
+            if j[2] != "":
+                hoge2 += j[2] + "\n"
+            if j[3] != "":
+                hoge3 += j[3] + "\n"
+            if j[4] != "":
+                hoge4 += j[4] + "\n"
 
-for view in view_df_list:
-    print(view)
+# for view in view_df_list:
+#     print(view)
+viewer_df = pd.DataFrame(view_df_list,columns=["date","a","b","c","d"])
+# print(viewer_df)
+
 
 
 
@@ -72,5 +85,5 @@ for view in view_df_list:
 
 
 # # Streamlitで表示
-# st.title('Spreadsheet Data')
-# st.write(df_list)
+st.title('Spreadsheet Data')
+st.write(viewer_df)
