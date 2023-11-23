@@ -77,7 +77,7 @@ for j in df_list:
 
 # for view in view_df_list:
 #     print(view)
-viewer_df = pd.DataFrame(view_df_list,columns=["date","自己肯定感or効力感","明日必ずやる","今日の振り返り","今日の一言"])
+viewer_df = st.write(view_df_list,columns=["date","自己肯定感or効力感","明日必ずやる","今日の振り返り","今日の一言"])
 # print(viewer_df)
 
 
