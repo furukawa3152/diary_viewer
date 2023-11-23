@@ -53,13 +53,13 @@ for j in df_list:
     ymd = new_df_list[num][0]
     if j[0] == ymd:
         if j[1] != "":
-            hoge1 += j[1] +"  \n"
+            hoge1 += j[1] +"<br>"
         if j[2] != "":
-            hoge2 += j[2] +"  \n"
+            hoge2 += j[2] +"<br>"
         if j[3] != "":
-            hoge3 += j[3] +"  \n"
+            hoge3 += j[3] +"<br>"
         if j[4] != "":
-            hoge4 += j[4] +"  \n"
+            hoge4 += j[4] +"<br>"
     else:
         view_df_list.append([ymd, hoge1, hoge2, hoge3, hoge4])
         hoge1, hoge2, hoge3, hoge4 = ("", "", "", "")
@@ -67,13 +67,13 @@ for j in df_list:
         ymd = new_df_list[num][0]
         if j[0] == ymd:
             if j[1] != "":
-                hoge1 += j[1] + "  \n"
+                hoge1 += j[1] + "<br>"
             if j[2] != "":
-                hoge2 += j[2] + "  \n"
+                hoge2 += j[2] + "<br>"
             if j[3] != "":
-                hoge3 += j[3] + "  \n"
+                hoge3 += j[3] + "<br>"
             if j[4] != "":
-                hoge4 += j[4] + "  \n"
+                hoge4 += j[4] + "<br>"
 
 # for view in view_df_list:
 #     print(view)
