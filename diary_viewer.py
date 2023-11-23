@@ -81,7 +81,7 @@ if submitted:
                     hoge3 += j[3] + "  \n"
                 if j[4] != "":
                     hoge4 += j[4] + "  \n"
-
+    view_df_list.append([ymd, hoge1, hoge2, hoge3, hoge4])
     # for view in view_df_list:
     #     print(view)
     viewer_df = pd.DataFrame(view_df_list,columns=["date","自己肯定感or効力感","明日必ずやる","今日の振り返り","今日の一言"])
