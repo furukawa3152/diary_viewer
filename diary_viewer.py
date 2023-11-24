@@ -37,6 +37,8 @@ with st.form("my_form", clear_on_submit=False):
 
 if submitted:
     df = df[df.iloc[:, 6] == line_id ]
+    #降順ソートする
+    df = df.sort_values(by=df.columns[0], ascending=False)
     df_list = df.values.tolist()
     # Streamlitで表示
     # st.title('Spreadsheet Data')
