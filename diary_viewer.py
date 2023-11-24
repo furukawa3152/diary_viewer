@@ -97,6 +97,5 @@ if submitted:
 
 
     # # Streamlitで表示
-    st.write(viewer_df)
     st.dataframe(viewer_df,hide_index=True,)
     # print(new_df_list)
