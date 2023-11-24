@@ -39,6 +39,9 @@ if submitted:
     df = df[df.iloc[:, 6] == line_id ]
     #降順ソートする
     df = df.sort_values(by=df.columns[0], ascending=False)
+    #現在のカウントを取得
+    new_count = df.iloc[0, 5]
+    st.text(f"現在記録{new_count}日です。")
     df_list = df.values.tolist()
     # Streamlitで表示
     # st.title('Spreadsheet Data')
