@@ -98,4 +98,5 @@ if submitted:
 
     # # Streamlitで表示
     st.write(viewer_df)
+    st.dataframe(viewer_df)
     # print(new_df_list)
