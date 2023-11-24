@@ -30,7 +30,7 @@ df = pd.DataFrame(data)
 df.columns = df.iloc[0]
 # 一行目を削除する
 df = df[1:]
-st.title('褒める日誌！')
+st.title('Daily Log')
 with st.form("my_form", clear_on_submit=False):
     line_id = st.text_input('line_idを入力して下さい。')
     submitted = st.form_submit_button("日記を出力")
@@ -49,9 +49,6 @@ if submitted:
 
     # DataFrameをリストに変換
     new_df_list = new_df.values.tolist()
-    #最後にどうでもいいやつを足してやる
-
-    # new_df_list.append(["hoge"])
     view_df_list = []
     hoge1, hoge2, hoge3, hoge4 = ("", "", "", "")
     num = 0
