@@ -1,6 +1,6 @@
 [theme]
-primaryColor="#9AD0C2"
-backgroundColor="#ECF4D6"
-secondaryBackgroundColor="#2D9596" # ダークグレー
+primaryColor="#DED0B6"
+backgroundColor="#FAEED1"
+secondaryBackgroundColor="#FDF7E4" # ダークグレー
 textColor="#265073" # 白
 font="sans serif"
