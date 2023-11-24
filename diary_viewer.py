@@ -31,8 +31,7 @@ df.columns = df.iloc[0]
 # 一行目を削除する
 df = df[1:]
 st.title('Daily Log')
-
-st.header("Let's self-reflect!")
+st.title("Let's self-reflect!")
 
 with st.form("my_form", clear_on_submit=False):
     line_id = st.text_input('line_idを入力して下さい。')
