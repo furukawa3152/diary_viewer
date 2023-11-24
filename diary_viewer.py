@@ -31,7 +31,7 @@ df.columns = df.iloc[0]
 # 一行目を削除する
 df = df[1:]
 st.title('Daily Log')
-st.text("Let's self-reflect!")
+st.header("Let's self-reflect!")
 
 
 with st.form("my_form", clear_on_submit=False):
