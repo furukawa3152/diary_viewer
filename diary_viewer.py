@@ -35,7 +35,7 @@ st.header("Let's self-reflect!")
 
 
 with st.form("my_form", clear_on_submit=False):
-    line_id = st.text_input('line_idを入力して下さい。')
+    line_id = st.text_input('diaryappのユーザーIDを入力して下さい。')
     submitted = st.form_submit_button("日記を出力")
 
 if submitted:
