@@ -32,7 +32,7 @@ df.columns = df.iloc[0]
 df = df[1:]
 st.title('Daily Log')
 
-st.subheader("Let's self-reflect!")
+st.header("Let's self-reflect!")
 
 with st.form("my_form", clear_on_submit=False):
     line_id = st.text_input('line_idを入力して下さい。')
