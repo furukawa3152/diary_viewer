@@ -36,6 +36,8 @@ st.header("Let's self-reflect!")
 
 with st.form("my_form", clear_on_submit=False):
     line_id = st.text_input('diaryappのユーザーIDを入力して下さい。')
+    #スペースや改行があれば削除
+    line_id = ''.join(line_id.split())
     submitted = st.form_submit_button("日記を出力")
 
 if submitted:
@@ -91,14 +93,7 @@ if submitted:
     #     print(view)
     viewer_df = pd.DataFrame(view_df_list,columns=["date","自己肯定感or効力感","明日必ずやる","今日の振り返り","今日の一言"])
     # print(viewer_df)
-
-
-
-
     # print(df_list)
-
-
-
-    # # Streamlitで表示
+    # Streamlitで表示
     st.dataframe(viewer_df,hide_index=True,)
     # print(new_df_list)
