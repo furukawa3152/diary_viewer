@@ -99,4 +99,4 @@ if submitted:
         st.dataframe(viewer_df,hide_index=True,)
         # print(new_df_list)
     except IndexError:
-        st.header("ユーザーIDを確認して下さい。")
+        st.header("error!",color = "red")
