@@ -99,5 +99,5 @@ if submitted:
         st.dataframe(viewer_df,hide_index=True,)
         # print(new_df_list)
     except IndexError:
-        st.header("エラーです。")
-        st.text("ユーザーIDを確認してください。  \ndiaryappの画面で「ユーザーID」と入力すると出てくるよ")
+        st.subheader("エラーです。")
+        st.text("ユーザーIDを確認してください。  \nLINEのdiaryappの画面で「ユーザーID」と入力すると出てくるよ")
