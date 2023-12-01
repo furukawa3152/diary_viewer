@@ -100,4 +100,4 @@ if submitted:
         # print(new_df_list)
     except IndexError:
         st.subheader("エラーです。")
-        st.text("ユーザーIDを確認してください。  \nLINEのdiaryappの画面で「ユーザーID」と入力すると出てくるよ")
+        st.text("ユーザーIDを確認してください。  \nLINEのdiaryappの画面で「ユーザーID」と入力すると出てくるよ。")
