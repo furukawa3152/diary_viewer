@@ -104,4 +104,7 @@ with tab1:
             st.subheader("エラーです。")
             st.text("ユーザーIDを確認してください。  \nLINEのdiaryappの画面で「ユーザーID」と入力すると出てくるよ。")
 with tab2:
-    st.subheader("開発中")
+    st.subheader("このアプリについて")
+    st.text("""2023年人材育成研修の内容を踏まえて古川が個人的に作成している日誌アプリケーションです。\n
+    LINEで内容を入力してこちらで閲覧する形式となります。
+            """)
