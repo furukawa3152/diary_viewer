@@ -1,6 +1,6 @@
 [theme]
 primaryColor="#007BFF"
-backgroundColor="#F8F9FA"
-secondaryBackgroundColor="#FFC107"
-textColor="#28A745"
+backgroundColor="#28A745"
+secondaryBackgroundColor="#F8F9FA"
+textColor="#FFC107"
 font="Meiryo"
