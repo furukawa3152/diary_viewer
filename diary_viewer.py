@@ -30,17 +30,17 @@ df = pd.DataFrame(data)
 df.columns = df.iloc[0]
 # 一行目を削除する
 df = df[1:]
-st.title('Daily Log')
+st.title('自分を高める日誌アプリ！！')
 st.header("Let's self-reflect!")
 
 
 tab1, tab2 = st.tabs(["diary", "tutorial"])
 with tab1:
     with st.form("my_form", clear_on_submit=False):
-        line_id = st.text_input('diaryappのユーザーIDを入力して下さい。')
+        line_id = st.text_input('アプリのユーザーIDを入力して下さい。')
         #スペースや改行があれば削除
         line_id = ''.join(line_id.split())
-        submitted = st.form_submit_button("日記を出力")
+        submitted = st.form_submit_button("日誌を出力")
 
     if submitted:
         try:
@@ -94,7 +94,7 @@ with tab1:
             view_df_list.append([ymd, hoge1, hoge2, hoge3, hoge4])
             # for view in view_df_list:
             #     print(view)
-            viewer_df = pd.DataFrame(view_df_list,columns=["date","自己肯定感or効力感","明日必ずやる","今日の振り返り","今日の一言"])
+            viewer_df = pd.DataFrame(view_df_list,columns=["date","本日のベスト","明日必ずやる","今日の振り返り","今日の一言"])
             # print(viewer_df)
             # print(df_list)
             # Streamlitで表示
@@ -102,16 +102,16 @@ with tab1:
             # print(new_df_list)
         except IndexError:
             st.subheader("エラーです。")
-            st.text("ユーザーIDを確認してください。  \nLINEのdiaryappの画面で「ユーザーID」と入力すると出てくるよ。")
+            st.text("ユーザーIDを確認してください。  \n自分を高める日誌アプリの画面で「ユーザーID」と入力すると出てくるよ。")
 with tab2:
     st.markdown("**このアプリについて**")
-    st.text("""2023年人材育成研修の内容を踏まえて古川が個人的に作成している日誌アプリケーションです。\nLINEで内容を入力してこちらで閲覧する形式となります。
+    st.text("""ひらまつ病院人材育成研修の内容を踏まえて、医事課古川が個人的に作成した日誌アプリケーションです。\nLINEで内容を入力してこちらで閲覧する形式となります。
             """)
     st.markdown("**日誌の基本的な使い方**")
-    st.text("以下の４項目を入力します。（日に何度でも入力可能です。）\n本日の自己肯定感or自己効力感:\n明日必ずやること:\n今日をやり直せるなら:\n今日の一言:")
+    st.text("以下の４項目を入力します。（日に何度でも入力可能です。）\n本日のベスト:\n明日必ずやること:\n今日をやり直せるなら:\n今日の一言:")
     st.text("自己肯定感の項目について、入力するとAIがその内容を褒めるコメントをLINEで返してくれます。")
     st.markdown("**使用上の注意**")
-    st.text("内容について本人しか閲覧できない形式で作成しておりますが、\n暗号化等しているわけではありません。\n重要な個人情報等は入力しないようお願いします。")
+    st.text("内容については暗号化してAWSのデータベースに保存されるため、本人のみ閲覧可能です。\n一度つけた日誌の削除、修正は出来ません。\nOpenAIのAPIを利用する関係上、重要な個人情報等は入力しないようお願いします。")
     st.markdown("**継続のコツ（開発者が２か月つけてみての感想）**")
     st.text("１：思いついたらその場で書いてしまう。（１項目ずつでもOK。）\n２：褒めることを先にイメージしながら、明日やることを考える。\n３：毎日日誌のための時間を設定しておく。（業務終了時、寝る前、等）\n４：しんどかったらめっちゃ短くてもOK。（継続優先）")
     st.text("スマホでどこからでも記入できるのがウリですので、書けるときにどんどん書いちゃうと良いです。\n使っていると、AIが褒める機能はオマケみたいなもので、\n自分で自分を褒めたことが後で振り返ってとても力になってくれるな～と実感します。")
