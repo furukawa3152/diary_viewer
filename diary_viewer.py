@@ -30,7 +30,7 @@ df = pd.DataFrame(data)
 df.columns = df.iloc[0]
 # 一行目を削除する
 df = df[1:]
-st.title('自分を高める日誌アプリ！！')
+st.title('自分を高める日誌')
 st.header("Let's self-reflect!")
 
 
